@@ -1,0 +1,29 @@
+@import 'normalize.css';
+
+@font-face {
+    font-family: "ProximaNova";
+    src: url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Bold.woff2) format("woff2"),
+        url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Bold.woff) format("woff"),
+        url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Bold.otf) format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #fe2c55
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: ProximaNova;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed; // tối ưu hiện thị font nhanh nhất
+}
