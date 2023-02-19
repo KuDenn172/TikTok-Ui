@@ -1,0 +1,17 @@
+.menu-list {
+    width: 224px;
+
+    .menu-item {
+        margin-left: 0;
+
+    }
+}
+
+.menu-item {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    padding-block: 10px;
+    justify-content: flex-start;
+    height: 42px;
+}

@@ -2,7 +2,7 @@
     width: 100%;
     max-height: min((100vh - 96px) - 60px, 734px);
     padding-block: 8px;
-    background-color: #ffffff;
+    background-color:var(--white);
     box-shadow: hwb(0 0% 100% / 0.12) 0px 2px 12px;
     border-radius: 8px;
 }
