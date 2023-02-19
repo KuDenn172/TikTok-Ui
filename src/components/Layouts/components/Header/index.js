@@ -52,7 +52,7 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-
+                        
                 <div className={cx('action')}></div>
             </div>
         </header>
