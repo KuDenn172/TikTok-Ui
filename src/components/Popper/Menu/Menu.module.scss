@@ -7,11 +7,36 @@
     }
 }
 
+// Menu item
 .menu-item {
     width: 100%;
     border: none;
     border-radius: 0;
     padding-block: 10px;
     justify-content: flex-start;
-    height: 42px;
+    line-height: 2.2rem;
+}
+
+// Menu Header
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+}
+
+.back-btn {
+    width: 50px;
+    height: 100%;
+    font-size: 1.6rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.6rem;
+    font-weight: 600;
 }
