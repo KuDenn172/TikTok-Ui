@@ -12,20 +12,23 @@ import {
     faEarthAsia,
     faEllipsisV,
     faGear,
-    faMagnifyingGlass,
+    faPaperPlane,
     faPlus,
     faSignOut,
     faSpinner,
     faVideo,
 } from '@fortawesome/free-solid-svg-icons';
-import { faKeyboard, faMessage, faQuestionCircle, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faKeyboard,  faQuestionCircle, faUser } from '@fortawesome/free-regular-svg-icons';
 
 import images from '~/assets/images';
+
 import styles from './Header.module.scss';
 import { Wrapper as WrapperPopper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, SearchIcon } from '~/components/Icons';
+import Image from '~/components/images';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -80,7 +83,7 @@ const userMenu = [
         icon: <FontAwesomeIcon icon={faSignOut} />,
         title: 'Log out',
         to: '/setting',
-        separate:true
+        separate: true,
     },
 ];
 
@@ -131,7 +134,7 @@ function Header() {
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                     </div>
                 </HeadlessTippy>
@@ -145,9 +148,15 @@ function Header() {
                                 </button>
                             </Tippy>
 
+                            <Tippy delay={[0, 200]} content="Message">
+                                <button className={cx('action-btn')}>
+                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                </button>
+                            </Tippy>
+
                             <Tippy delay={[0, 200]} content="Inbox">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -160,9 +169,9 @@ function Header() {
 
                     <Menu items={currenUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currenUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/9a059bc23a2073efc81dbc66a80a798b~c5_100x100.jpeg?x-expires=1677132000&x-signature=6b26BO3916vp0WVYGX%2FQEWAUmLk%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/9a059bc23a2073efc81dbc66a80a798b~c5_100x100.jpeg?x-expires=1677139200&x-signature=4TvDW6B43jOaacLYp6O6vJdEsho%3D"
                                 alt="Nguyen Van A"
                             />
                         ) : (
