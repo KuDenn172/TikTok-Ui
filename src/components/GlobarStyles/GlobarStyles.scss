@@ -5,7 +5,7 @@
     src: url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Bold.woff2) format("woff2"),
         url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Bold.woff) format("woff"),
         url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Bold.otf) format("opentype");
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -13,7 +13,7 @@
     --primary-color: #fe2c55;
     --balck: #000;
     --white: #fff;
-    --text-color: #161823 ;
+    --text-color: #161823;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
 }
@@ -56,4 +56,22 @@ a[href] {
 
 li {
     list-style: none;
+}
+
+// Custom tippy tooltip
+body {
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.92);
+        border-radius: 8px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 2.2rem;
+
+        .tippy-arrow {
+            color: rgba(84, 84, 84, 0.92);
+        }
+        .tippy-content{
+            padding: 8px 9px;
+        }
+    }
 }
