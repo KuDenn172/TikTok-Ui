@@ -8,20 +8,20 @@ function App() {
         <BrowserRouter>
             <div className="App">
                 <Routes>
-                    {publicRoutes.map((router, index) => {
-                        const Page = router.component;
+                    {publicRoutes.map((route, index) => {
+                        const Page = route.component;
                         let Layout = DefaultLayout;
 
-                        if (router.layout) {
-                            Layout = router.layout;
-                        } else if (router.layout === null) {
+                        if (route.layout) {
+                            Layout = route.layout;
+                        } else if (route.layout === null) {
                             Layout = Fragment;
                         }
 
                         return (
                             <Route
                                 key={index}
-                                path={router.path}
+                                path={route.path}
                                 element={
                                     <Layout>
                                         <Page />

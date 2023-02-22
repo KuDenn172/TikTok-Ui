@@ -19,89 +19,10 @@
     justify-content: space-between;
 }
 
-.search,
-.search-result {
-    width: 361px;
-
-}
-
-.search {
-    position: relative;
-    border: 1.5px solid transparent;
-    height: var(--search-height);
-    background-color: #1618230f;
-    border-radius: var(--search-border-radius);
-    padding-left: 16px;
-    caret-color: var(--primary-color);
-    display: flex;
-
-    input {
-        flex: 1;
-        height: 100%;
-        color: var(--black);
-        font-size: 1.6rem;
-        background-color: transparent;
-
-        &:not(:placeholder-shown)~.search-btn {
-            color: #161823bf;
-        }
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 9px;
-        right: var(--search-button-width);
-        width: 1px;
-        height: calc(var(--search-height) - 18px);
-        background-color: #1618231f;
-
-    }
-
-    &:focus-within {
-        border: 1.5px solid #c5c6c9;
-    }
-}
-
-.search-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    padding: 5px 12px;
-    color: #16182380;
-}
-
 .logo {
     cursor: pointer;
 }
 
-.clear,
-.loading {
-    color: #16182357;
-    font-size: 1.7rem;
-    position: absolute;
-    right: calc(var(--search-button-width) + 12px);
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0.5rem;
-    cursor: pointer;
-}
-
-.search-btn {
-    width: var(--search-button-width);
-    height: 100%;
-    border-radius: 0 var(--search-border-radius) var(--search-border-radius) 0;
-    color: #16182357;
-    font-size: 2rem;
-
-    &:hover {
-        background-color: #16182308;
-    }
-
-    &:active {
-        background-color: #1618230f;
-    }
-
-}
 
 // Action
 .action {
@@ -118,10 +39,27 @@
 }
 
 .action-btn {
+    position: relative;
+    display: flex;
     font-size: 2rem;
     color: var(--text-color);
     background-color: transparent;
     padding: 4px 11px;
+}
+
+.badge {
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    padding: 0px 6px;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    font-family: 'ProximaNova', sans-serif;
+    background-color: var(--primary-color);
 }
 
 .user-avatar {
