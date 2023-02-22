@@ -14,6 +14,7 @@ import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/images';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -88,7 +89,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 {/* Logo */}
-                <Link to={('/')}>
+                <Link to={routesConfig.home} className={cx('logo-link')}>
                     <img className={cx('logo')} src={images.logo} alt="Logo Titok" />
                 </Link>
 

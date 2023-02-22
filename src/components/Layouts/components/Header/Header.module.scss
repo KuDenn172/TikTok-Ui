@@ -2,12 +2,18 @@
     --search-border-radius: 92px;
     --search-height: 46px;
     --search-button-width: 52px;
-
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 60px;
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
-    display: flex;
-    justify-content: center;
+    background-color: var(--white);
 }
 
 .inner {
@@ -22,7 +28,9 @@
 .logo {
     cursor: pointer;
 }
-
+.logo-link{
+    display: flex;
+}
 
 // Action
 .action {
@@ -58,7 +66,7 @@
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--white);
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var( --font-family);
     background-color: var(--primary-color);
 }
 
