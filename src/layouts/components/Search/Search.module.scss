@@ -22,6 +22,7 @@
         font-size: 1.6rem;
         background-color: transparent;
         font-family: var( --font-family);
+        padding-right: 40px;
         &:not(:placeholder-shown)~.search-btn {
             color: #161823bf;
         }

@@ -20,6 +20,6 @@ const publicRoutes = [
 ];
 
 //Private router
-const privatecRoutes = [];
+const privateRoutes = [];
 
-export { publicRoutes, privatecRoutes };
+export { publicRoutes, privateRoutes };
