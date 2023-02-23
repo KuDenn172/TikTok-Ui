@@ -6,7 +6,6 @@
 
     &:hover {
         background: #16182308;
-
     }
 }
 
@@ -36,4 +35,8 @@
     font-size: 1.4rem;
     color: #16182380;
     font-weight: 400;
+    margin-top: -2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

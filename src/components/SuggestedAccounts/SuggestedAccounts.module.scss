@@ -1,0 +1,70 @@
+.wrapper {
+    padding-block: 16px;
+    border-top: 1px solid rgba(22, 24, 35, .12);;
+}
+.label {
+    padding: 0 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #161823bf;
+}
+
+// Account Item
+.account-item {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    cursor: pointer;
+
+    &:hover {
+        background: #16182308;
+    }
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.nickname {
+    font-family: 'SofiaPro';
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+}
+
+.check {
+    font-size: 1.4rem;
+    color: #20d5ec;
+    margin-left: 4px;
+}
+
+.name {
+    font-size: 1.2rem;
+    color: #161823bf;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: -2px;
+    display: block;
+}
+
+.more-btn {
+    color: #fe2c55;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: inline-block;
+    padding: 8px;
+    cursor: pointer;
+}
