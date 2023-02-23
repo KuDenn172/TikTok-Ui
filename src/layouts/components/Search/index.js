@@ -8,10 +8,10 @@ import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Search.module.scss';
 import { Wrapper as WrapperPopper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
+import AccountItem from '~/components/AccountItem/';
 import { SearchIcon } from '~/components/Icons';
 import useDebounced from '~/hooks/useDebounced';
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchService from '~/services/searchService';
 
 const cx = classNames.bind(styles);
 function Search() {
@@ -32,7 +32,7 @@ function Search() {
         const fetchApi = async () => {
             setLoading(true);
 
-            const result = await searchServices.search(debounced);
+            const result = await searchService.search(debounced);
             setSearchResult(result);
 
             setLoading(false);

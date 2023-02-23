@@ -14,7 +14,7 @@ import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/images';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
-import routesConfig from '~/config/routes';
+import  config from '~/config';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -74,7 +74,7 @@ const userMenu = [
 ];
 
 function Header() {
-    const currenUser = true;
+    const currentUser = true;
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
             case 'language':
@@ -89,16 +89,16 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 {/* Logo */}
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img className={cx('logo')} src={images.logo} alt="Logo Titok" />
                 </Link>
-
+                
                 {/* Search */}
                 <Search />
 
                 {/* Action */}
                 <div className={cx('action')}>
-                    {currenUser ? (
+                    {currentUser ? (
                         <>
                             <Tippy delay={[0, 200]} content="Upload Video">
                                 <button className={cx('action-btn')}>
@@ -126,8 +126,8 @@ function Header() {
                         </>
                     )}
 
-                    <Menu items={currenUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
-                        {currenUser ? (
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                        {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/9a059bc23a2073efc81dbc66a80a798b~c5_100x100.jpeg?x-expires=1677139200&x-signature=4TvDW6B43jOaacLYp6O6vJdEsho%3D"
