@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 function Menu({ children }) {
     return (
-        <nav className=''>{children}</nav>
+        <nav >{children}</nav>
     );
 }
 

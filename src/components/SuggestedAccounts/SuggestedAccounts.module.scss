@@ -15,10 +15,11 @@
     display: flex;
     align-items: center;
     padding: 4px;
+    border-radius: 4px;
     cursor: pointer;
-
+    transition: background-color ease-in-out 200ms;
     &:hover {
-        background: #16182308;
+        background-color: #16182308;
     }
 }
 
