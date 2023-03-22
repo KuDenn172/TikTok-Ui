@@ -15,6 +15,11 @@ import Image from '~/components/Images';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
 import config from '~/config';
+import Login from '~/components/Login';
+import Modal from '~/components/Modal';
+import { useEffect, useState } from 'react';
+import SignUp from '~/components/Login/SignUp';
+import { useAuth } from '~/contexts/AuthContext';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -68,13 +73,15 @@ const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faSignOut} />,
         title: 'Log out',
-        to: '/setting',
+        // to: '/logout',
         separate: true,
     },
 ];
 
 function Header() {
-    const currentUser = true;
+    const [openModal, setOpenModal] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
+    const { currentUser, logout } = useAuth();
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
             case 'language':
@@ -84,6 +91,18 @@ function Header() {
                 break;
         }
     };
+
+    async function handleLogout(e) {
+        await logout()
+            .then(() => {
+                // Đăng xuất thành công
+            })
+            .catch((error) => {
+                // Xử lý lỗi đăng xuất
+                console.log(error);
+            });
+        window.location.reload();
+    }
 
     return (
         <header className={cx('wrapper')}>
@@ -101,9 +120,9 @@ function Header() {
                     {currentUser ? (
                         <>
                             <Tippy delay={[0, 200]} content="Upload Video">
-                                <button className={cx('action-btn')}>
+                                <Link className={cx('action-btn')} to={config.routes.upload}>
                                     <UploadIcon />
-                                </button>
+                                </Link>
                             </Tippy>
 
                             <Tippy delay={[0, 200]} content="Message">
@@ -121,12 +140,29 @@ function Header() {
                         </>
                     ) : (
                         <>
-                            <Button leftIcon={<FontAwesomeIcon icon={faPlus} />}>Upload</Button>
-                            <Button primary> Log in</Button>
+                            <Button leftIcon={<FontAwesomeIcon icon={faPlus} to={config.routes.upload} />}>
+                                Upload
+                            </Button>
+                            <Button primary onClick={() => setOpenModal(!openModal)}>
+                                {' '}
+                                Log in
+                            </Button>
+
+                            <Modal open={openModal} onClose={() => setOpenModal(false)}>
+                                {isLogin ? (
+                                    <Login onClick={() => setIsLogin(false)} />
+                                ) : (
+                                    <SignUp onClick={() => setIsLogin(true)} />
+                                )}
+                            </Modal>
                         </>
                     )}
 
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                    <Menu
+                        items={!currentUser ? userMenu : MENU_ITEMS}
+                        onChange={handleMenuChange}
+                        onLogout={handleLogout}
+                    >
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
@@ -134,11 +170,9 @@ function Header() {
                                 alt="Nguyen Van A"
                             />
                         ) : (
-                            <>
-                                <button className={cx('more-btn')}>
-                                    <FontAwesomeIcon icon={faEllipsisV} />
-                                </button>
-                            </>
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisV} />
+                            </button>
                         )}
                     </Menu>
                 </div>
@@ -146,6 +180,5 @@ function Header() {
         </header>
     );
 }
-
 
 export default Header;

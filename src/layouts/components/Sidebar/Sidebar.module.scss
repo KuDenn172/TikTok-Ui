@@ -1,6 +1,21 @@
 .wrapper {
-    width: 356px;
-    padding: 20px 0 26px 8px;
     margin-left: -24px;
+    width: 356px;
+    // position: fixed;
+    // top: 60px;
+    // bottom: 0;
+    // overflow-y: auto;
+    // overflow-x: hidden;
+    // overscroll-behavior-y: contain;
+    z-index: 8;
 }
 
+.sidebar-content {
+    width: 356px;
+    padding: 20px 0 26px 8px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

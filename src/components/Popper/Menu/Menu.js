@@ -11,14 +11,13 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false }) {
+function Menu({ children, items = [], onChange = defaultFn, onLogout = defaultFn, hideOnClick = false }) {
     const [history, setHistory] = useState([{ data: items }]);
     const currentMenu = history[history.length - 1];
 
     const renderItems = () => {
         return currentMenu.data.map((item, index) => {
             const isParentMenu = !!item.children;
-
             return (
                 <MenuItem
                     key={index}
@@ -26,11 +25,15 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false 
                     onClick={() => {
                         if (isParentMenu) setHistory((prev) => [...prev, item.children]);
                         onChange(item);
+                        if (item.title === 'Log out') {
+                            onLogout();
+                        }
                     }}
                 />
             );
         });
     };
+
     const handleBack = () => {
         setHistory((prev) => prev.slice(0, history.length - 1));
     };

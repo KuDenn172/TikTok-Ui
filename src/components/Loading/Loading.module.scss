@@ -1,0 +1,46 @@
+.loader {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: block;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        mix-blend-mode: multiply;
+        animation: rotate 1s infinite;
+    }
+
+    &::before {
+        background-color: var(--primary-color);
+    }
+
+    &::after {
+        background-color: #20d5ec;
+        animation-delay: .5s;
+    }
+
+    @keyframes rotate {
+
+        0%,
+        100% {
+            left: 40px;
+        }
+
+        25% {
+            transform: scale(.3);
+        }
+
+        50% {
+            left: 0;
+        }
+
+        75% {
+            transform: scale(1);
+        }
+    }
+}

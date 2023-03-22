@@ -1,0 +1,321 @@
+.wrapper {
+    // padding-block: 24px;
+    // scroll-snap-align: center;
+    
+}
+
+// Item Video
+
+.account-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 0;
+    position: relative;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        height: 1px;
+        transform: scaleY(0.5);
+        background: rgba(22, 24, 35, .2);
+    }
+}
+
+.account-content {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nickname {
+    margin-right: 6px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.check {
+    font-size: 1.4rem;
+    color: #20d5ec;
+    margin-left: 4px;
+}
+
+.name {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+
+.music {
+    font-weight: 600;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+.music-icon {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+
+// Video
+.video-content {
+    display: flex;
+
+    .video-body {
+        position: relative;
+
+
+        &:hover .inside-video {
+            display: flex;
+        }
+    }
+
+    .video {
+        height: calc(450px + (100vw - 768px) / 1152 * 100);
+        border-radius: 8px;
+        background-size: cover;
+        overflow: hidden;
+        cursor: pointer;
+
+
+    }
+}
+
+
+
+// Sidebar Video
+
+.action {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 20px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.action-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 21px;
+    background-color: #1618230f;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .action-icon.action {
+        transition: all ease-in-out 200ms;
+        color: var(--primary-color);
+        margin: 0;
+    }
+}
+
+.count {
+    color: #161823bf;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+// TWITTER HEART
+.heart {
+    width: 100px;
+    height: 100px;
+    background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    transform: scale(0.7);
+    transition: background-position 1s steps(28);
+    transition-duration: 0s;
+
+    &.is-active {
+        transition-duration: 1s;
+        background-position: -2800px 0;
+    }
+}
+
+
+
+// Inside Video
+.inside-video {
+
+    position: absolute;
+    width: 100%;
+    display: none;
+
+    .inside-controls {
+        font-size: 2rem;
+        transition: opacity 0.3s ease 0s;
+        bottom: 45px;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        right: 20px;
+        left: 20px;
+
+        .inside-btn {
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.inside-sound {
+    position: relative;
+
+    .volume-bar {
+        position: absolute;
+        bottom: 55px;
+        left: 50%;
+        right: 50%;
+        cursor: pointer;
+        width: 2px;
+        height: 50px;
+        transform: rotate(180deg);
+        display: none;
+
+        .volume-bar2 {
+            height: 0%;
+            position: absolute;
+            width: 100%;
+            background-color: var(--white);
+        }
+
+        .volume {
+            -webkit-appearance: none;
+            position: absolute;
+            transform: rotate(90deg) scale(1);
+            height: 2px;
+            width: 50px;
+            background-color: #ffffff57;
+
+            bottom: 0;
+            bottom: 24px;
+            left: -24px;
+            z-index: 7;
+
+
+        }
+
+        .volume::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 24px;
+            height: 68px;
+            margin: 8px 7px 0px;
+            display: block;
+            cursor: initial;
+            background: #16182357;
+            border-radius: 32px;
+            left: -18px;
+            bottom: -8px;
+        }
+
+
+    }
+
+    &:hover .volume-bar {
+        display: block;
+    }
+
+}
+
+.progress-container {
+    position: absolute;
+    bottom: 18px;
+    cursor: initial;
+    display: flex;
+    padding-inline: 12px;
+    width: 100%;
+    align-items: center;
+
+
+
+    .progress-bar {
+        position: relative;
+        display: flex;
+        width: 100%;
+        transition: .3s linear;
+
+        .progress-bar2 {
+            position: absolute;
+            background: rgb(255, 255, 255);
+            height: 100%;
+        }
+
+        &:hover .progress {
+            height: 4px;
+
+        }
+
+        &:hover .progress::-webkit-slider-thumb {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+        }
+    }
+
+
+    .progress {
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff57;
+        cursor: pointer;
+        -webkit-appearance: none;
+    }
+
+    .progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 3px;
+        height: 2px;
+        background-color: var(--white);
+    }
+
+
+    .progress-time {
+        font-size: 1.1rem;
+        color: var(--white);
+        text-align: end;
+        margin-left: 8px;
+        max-width: 60px;
+    }
+}

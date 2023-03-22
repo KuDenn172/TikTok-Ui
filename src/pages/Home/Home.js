@@ -1,5 +1,13 @@
+import axios from 'axios';
+import Loading from '~/components/Loading';
+import Video from '~/layouts/components/Video';
+
 function Home() {
-    return <h2 style={{height:2000}}>Home Page</h2>
+    return (
+        <div className="">
+            <Video />
+        </div>
+    );
 }
 
 export default Home;

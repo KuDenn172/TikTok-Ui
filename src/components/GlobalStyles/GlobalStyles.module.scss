@@ -44,6 +44,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-snap-type: y mandatory;
 }
 
 // Scrollbar Css
@@ -92,6 +93,12 @@ a {
 li {
     list-style: none;
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear{
+  display: none;
+}
+
 
 // Custom tippy tooltip
 body {

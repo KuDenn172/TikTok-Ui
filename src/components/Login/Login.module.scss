@@ -1,0 +1,118 @@
+// Modal Login
+.login-container {
+    width: 375px;
+    margin: auto;
+    height: 100%;
+    margin-bottom: 100px;
+}
+
+.login-content {
+    // height: 388px;
+    overflow-y: auto;
+
+    .login-title {
+        font-size: 3.2rem;
+        text-align: center;
+        margin: 16px auto;
+        font-weight: bold;
+        font-family: 'SofiaPro';
+    }
+
+}
+
+.login-link {
+    position: relative;
+    color: rgb(22, 24, 35);
+    font-weight: 600;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    font-size: 1.5rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 16px;
+
+
+    .login-icon {
+        position: absolute;
+        left: 12px;
+        font-size: 1.8rem;
+    }
+}
+
+.login-footer {
+    height: 64px;
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+}
+
+.login-convert {
+    margin-left: 5px;
+    font-weight: 600;
+    line-height: 18px;
+    color: var(--primary-color);
+}
+
+// Login email
+.back-option {
+    font-size: 2rem;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form-label {
+    display: flex;
+    font-weight: 600;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    align-items: center;
+
+}
+
+
+
+.form-link {
+    color: rgba(22, 24, 35, 0.75);
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+
+
+.form-submit {
+    width: 100%;
+    margin-top: 21px;
+    margin-left: 0;
+
+}
+
+.login-button {
+    border: none;
+    color: rgba(22, 24, 35, 0.34);
+    background-color: rgba(22, 24, 35, 0.06);
+    pointer-events: none;
+}
+
+.error {
+    text-align: center;
+    display: block;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}

@@ -1,5 +1,11 @@
+import Video from '~/layouts/components/Video';
+
 function Following() {
-    return <h2>Following Page</h2>;
+    return (
+        <>
+            <Video />
+        </>
+    );
 }
 
 export default Following;
