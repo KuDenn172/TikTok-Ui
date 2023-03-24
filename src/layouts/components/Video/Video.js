@@ -28,10 +28,10 @@ function Video({ src, customFallback = video2, ...passProps }) {
 
     const handlePlayVideo = () => {
         if (!playing) {
-            videoRef.current.play();
+            videoRef.current?.play();
             setPlaying(true);
         } else {
-            videoRef.current.pause();
+            videoRef.current?.pause();
             setPlaying(false);
         }
     };
@@ -39,12 +39,12 @@ function Video({ src, customFallback = video2, ...passProps }) {
     useEffect(() => {
         if (isVisible) {
             if (!playing) {
-                videoRef.current.play();
+                videoRef.current?.play();
                 setPlaying(true);
             }
         } else {
             if (playing) {
-                videoRef.current.pause();
+                videoRef.current?.pause();
                 setPlaying(false);
             }
         }

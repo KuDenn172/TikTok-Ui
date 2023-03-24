@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 const Modal = ({ children, open, onClose }) => {
     if (!open) return null;
     return (
-        <>
+        <div className={cx('wrapper')}>
             <div onClick={() => onClose()} className={cx('overlay')}></div>
             <main className={cx('modal')}>
                 <button className={cx('modal-close')} onClick={() => onClose()}>
@@ -19,10 +19,14 @@ const Modal = ({ children, open, onClose }) => {
                 </button>
                 <div className={cx('modal-content')}>{children}</div>
             </main>
-        </>
+        </div>
     );
 };
 
-Modal.propTypes = {};
+Modal.propTypes = {
+    children:PropTypes.node.isRequired,
+    open: PropTypes.bool,
+    onClose: PropTypes.func
+};
 
 export default Modal;

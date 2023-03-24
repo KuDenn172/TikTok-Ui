@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types'
 import { useAuth } from '~/contexts/AuthContext';
 
 import Button from '../Button';
@@ -121,6 +122,10 @@ const LoginForm = ({ onClick }) => {
             )}
         </>
     );
+};
+
+LoginForm.propTypes = {
+    onClick:PropTypes.func
 };
 
 export default LoginForm;

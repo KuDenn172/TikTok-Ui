@@ -3,7 +3,6 @@ import { publicRoutes } from '~/routers';
 import MainLayout from '~/layouts';
 import { Fragment } from 'react';
 import { AuthProvider } from './contexts/AuthContext';
-import PrivateRouter from './routers/PrivateRouter';
 
 function App() {
     return (

@@ -1,5 +1,6 @@
 import { forwardRef, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import styles from './FormInput.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -75,5 +76,8 @@ const FormInput = forwardRef((props, ref) => {
         </>
     );
 });
+FormInput.propTypes = {
+    props: PropTypes.object,
+};
 
 export default FormInput;

@@ -73,6 +73,8 @@ const ForgotPassword = ({ onClick }) => {
     );
 };
 
-ForgotPassword.propTypes = {};
+ForgotPassword.propTypes = {
+    onClick:PropTypes.func
+};
 
 export default ForgotPassword;

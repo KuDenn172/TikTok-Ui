@@ -29,6 +29,8 @@ const SignUp = ({ onClick }) => {
     );
 };
 
-SignUp.propTypes = {};
+SignUp.propTypes = {
+    onClick:PropTypes.func
+};
 
 export default SignUp;

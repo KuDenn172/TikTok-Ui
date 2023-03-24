@@ -68,13 +68,17 @@ function VideoInside({ playing = false, currentSong, onClick }, videoRef) {
                     {`${CalculatorSeconds(currentTime)}/${CalculatorSeconds(duration)}`}
                 </span>
             </div>
+
+
+
+            
         </div>
     );
 }
 
-VideoInside.propTypes = {
-    playing: PropTypes.bool,
-    currentSong: PropTypes.object.isRequired,
-    onClick: PropTypes.func,
-};
+// VideoInside.propTypes = {
+//     playing: PropTypes.bool,
+//     currentSong: PropTypes.object.isRequired,
+//     onClick: PropTypes.func,
+// };
 export default forwardRef(VideoInside);

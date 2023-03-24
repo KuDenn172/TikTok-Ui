@@ -16,6 +16,7 @@ function Video() {
     const [loading, setLoading] = useState(false);
 
     const videoItemRef = useRef();
+    
     useEffect(() => {
         getData('followers')
             .then((data) => {
@@ -44,6 +45,7 @@ function Video() {
             setLoading(false); // kết thúc tải dữ liệu mới
         }
     }, [moreData, page, dataVideo, loading]);
+
 
     return (
         <div className={cx('wrapper')}>

@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 import config from '~/config';
 import Login from '~/components/Login';
 import Modal from '~/components/Modal';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SignUp from '~/components/Login/SignUp';
 import { useAuth } from '~/contexts/AuthContext';
 
@@ -140,7 +140,10 @@ function Header() {
                         </>
                     ) : (
                         <>
-                            <Button leftIcon={<FontAwesomeIcon icon={faPlus} to={config.routes.upload} />}>
+                            <Button
+                                leftIcon={<FontAwesomeIcon icon={faPlus} to={config.routes.upload} />}
+                                onClick={() => setOpenModal(!openModal)}
+                            >
                                 Upload
                             </Button>
                             <Button primary onClick={() => setOpenModal(!openModal)}>
@@ -159,7 +162,7 @@ function Header() {
                     )}
 
                     <Menu
-                        items={!currentUser ? userMenu : MENU_ITEMS}
+                        items={currentUser && currentUser.email ? MENU_ITEMS : userMenu}
                         onChange={handleMenuChange}
                         onLogout={handleLogout}
                     >

@@ -1,10 +1,11 @@
-import { async } from '@firebase/util';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '~/contexts/AuthContext';
+import PropTypes from 'prop-types'
+
 
 import Button from '../Button';
 import FormInput from '../FormInput';
@@ -119,5 +120,9 @@ const SignUpForm = ({ onClick }) => {
         </>
     );
 };
+
+SignUpForm.propTypes ={
+    onClick:PropTypes.func
+}
 
 export default SignUpForm;
