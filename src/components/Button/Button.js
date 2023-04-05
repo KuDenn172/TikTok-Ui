@@ -10,6 +10,7 @@ function Button({
     children,
     primary = false,
     outline = false,
+    maxWidth = false,
     rounded = false,
     disable = false,
     small = false,
@@ -42,7 +43,16 @@ function Button({
         Comp = 'a';
     }
 
-    const classes = cx('wrapper', { primary, outline, disable, rounded, small, large, [className]: className });
+    const classes = cx('wrapper', {
+        primary,
+        outline,
+        maxWidth,
+        disable,
+        rounded,
+        small,
+        large,
+        [className]: className,
+    });
 
     return (
         <Comp className={classes} {..._props}>

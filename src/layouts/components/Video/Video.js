@@ -8,7 +8,7 @@ import VideoInside from './VideoInside';
 import video2 from '~/assets/video2.mp4';
 const cx = classNames.bind(styles);
 
-function Video({ src, customFallback = video2, ...passProps }) {
+function Video({ src, customFallback = video2, className, ...passProps }) {
     const [playing, setPlaying] = useState(true);
     const [fallback, setFallBack] = useState('');
     const [currentSong, setCurrentSong] = useState({});
@@ -62,11 +62,13 @@ function Video({ src, customFallback = video2, ...passProps }) {
         });
     };
 
+    const classes = cx('video', { [className]: className });
+
     return (
         <div className={cx('video-body')}>
             <video
                 ref={videoRef}
-                className={cx('video')}
+                className={classes}
                 autoPlay={true}
                 tabIndex={2}
                 src={fallback || src}

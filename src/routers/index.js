@@ -1,4 +1,6 @@
 import { HeaderOnly } from '~/layouts';
+import { MainLayoutMax } from '~/layouts/MainLayout';
+
 import config from '~/config';
 
 // Layouts
@@ -14,12 +16,12 @@ import Login from '~/components/Login';
 const publicRoutes = [
     { path: config.routes.home, component: Home },
     { path: config.routes.following, component: Following },
-    { path: config.routes.profile, component: Profile },
+    { path: config.routes.profile, component: Profile, layout: MainLayoutMax },
     { path: config.routes.live, component: Live },
     { path: config.routes.upload, component: Upload, layout: HeaderOnly },
     { path: config.routes.search, component: Search, layout: null },
     { path: config.routes.login, component: Login, layout: HeaderOnly },
-    { path: '*', component: Login, layout: null },
+    // { path: '*', component: Login, layout: null },
 ];
 
 //Private router

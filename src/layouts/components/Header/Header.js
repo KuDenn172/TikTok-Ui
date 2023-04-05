@@ -56,7 +56,7 @@ const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
         title: 'View profile',
-        to: '/@hoso',
+        to: '/profile/@username',
     },
     {
         icon: <FontAwesomeIcon icon={faVideo} />,
@@ -91,7 +91,6 @@ function Header() {
                 break;
         }
     };
-
     async function handleLogout(e) {
         await logout()
             .then(() => {

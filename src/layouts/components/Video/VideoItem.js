@@ -48,12 +48,12 @@ const VideoItem = forwardRef(({ data }, ref) => {
                 <span className={cx('title')}>{data.signature}</span>
                 <strong className={cx('music')}>
                     <FontAwesomeIcon icon={faMusic} className={cx('music-icon')} />
-                    Relaxing Music for Stress Relief. Calm Music for Meditation, Sleep, Relax, Healing Therapy, Spa -
-                    Susi Nurhindayantini
+                    {data.caption ||
+                        'Relaxing Music for Stress Relief. Calm Music for Meditation, Sleep, Relax, Healing Therapy'}
                 </strong>
 
                 <div className={cx('video-content')}>
-                    <Video src={video1} />
+                    <Video src={data.video || video1} />
                     <VideoSidebar likes={1700} messages={200} shares={2003} />
                 </div>
             </div>
@@ -72,6 +72,5 @@ const VideoItem = forwardRef(({ data }, ref) => {
 });
 VideoItem.propTypes = {
     data: PropTypes.object.isRequired,
-   
 };
 export default VideoItem;

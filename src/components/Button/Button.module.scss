@@ -2,7 +2,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: var( --font-family);
+    font-family: var(--font-family);
     font-size: 1.6rem;
     font-weight: 700;
     min-width: 100px;
@@ -17,9 +17,6 @@
         background-color: rgba(22, 24, 35, .03);
     }
 
-    +& {
-        margin-left: 8px;
-    }
 
     &.disable {
         pointer-events: none;
@@ -80,4 +77,8 @@
 .large {
     padding: 14px 16px;
     min-width: 140px;
+}
+
+.maxWidth {
+    width: 100%;
 }

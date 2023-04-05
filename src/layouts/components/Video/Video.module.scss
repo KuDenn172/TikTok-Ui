@@ -1,7 +1,7 @@
 .wrapper {
     // padding-block: 24px;
     // scroll-snap-align: center;
-    
+
 }
 
 // Item Video
@@ -78,31 +78,29 @@
 // Video
 .video-content {
     display: flex;
+    align-items: center;
+    justify-content: center
+}
 
-    .video-body {
-        position: relative;
+.video-body {
+    position: relative;
+    cursor: pointer;
 
-
-        &:hover .inside-video {
-            display: flex;
-        }
-    }
-
-    .video {
-        height: calc(450px + (100vw - 768px) / 1152 * 100);
-        border-radius: 8px;
-        background-size: cover;
-        overflow: hidden;
-        cursor: pointer;
-
-
+    &:hover .inside-video {
+        display: flex;
     }
 }
 
-
+.video {
+    height: calc(450px + (100vw - 768px) / 1152 * 100);
+    border-radius: 8px;
+    background-size: cover;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+}
 
 // Sidebar Video
-
 .action {
     display: flex;
     flex-direction: column;

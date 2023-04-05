@@ -18,10 +18,11 @@ function Video() {
     const videoItemRef = useRef();
     
     useEffect(() => {
-        getData('followers')
-            .then((data) => {
-                setDataVideo(data.slice(0, 5));
-                setMoreData(data);
+        getData('listvideo/list_video')
+        .then((data) => {
+            const iterableData = Object.values(data);
+            setDataVideo(iterableData.slice(0, 5));
+            setMoreData(iterableData);
             })
             .catch((error) => {
                 console.error(error);

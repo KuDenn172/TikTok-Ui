@@ -1,4 +1,4 @@
-const { ref, get, child } = require('firebase/database');
+const { ref, get, child, set } = require('firebase/database');
 const { default: database } = require('~/firebase');
 
 // Hàm ref được sử dụng để trỏ đến Firebase Realtime Database
@@ -25,3 +25,4 @@ export const getData = (getData) => {
             console.error(error);
         });
 };
+

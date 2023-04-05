@@ -33,6 +33,7 @@
 
     --font-family: 'ProximaNova', sans-serif;
     --default-layout-width: 1150px;
+    --max-layout-width: 100%;
     --default-layout-horizontal-spacer: 24px;
 }
 
@@ -78,9 +79,15 @@ button {
 }
 
 button,
-input,
 [tabindex] {
     border: none;
+    outline: none;
+}
+
+input,
+textarea {
+    border: 1px solid #1618231f;
+    ;
     outline: none;
 }
 
@@ -95,8 +102,8 @@ li {
 }
 
 input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear{
-  display: none;
+input[type="password"]::-ms-clear {
+    display: none;
 }
 
 

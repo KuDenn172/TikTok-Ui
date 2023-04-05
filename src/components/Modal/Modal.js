@@ -8,15 +8,19 @@ import { faX } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-const Modal = ({ children, open, onClose }) => {
+const Modal = ({ children, open, onClose, className, small = false, isX = true }) => {
     if (!open) return null;
+
+    const classes = cx('modal', { small, [className]: className });
     return (
         <div className={cx('wrapper')}>
             <div onClick={() => onClose()} className={cx('overlay')}></div>
-            <main className={cx('modal')}>
-                <button className={cx('modal-close')} onClick={() => onClose()}>
-                    <FontAwesomeIcon icon={faX} />
-                </button>
+            <main className={classes}>
+                {isX && (
+                    <button className={cx('modal-close')} onClick={() => onClose()}>
+                        <FontAwesomeIcon icon={faX} />
+                    </button>
+                )}
                 <div className={cx('modal-content')}>{children}</div>
             </main>
         </div>
@@ -24,9 +28,11 @@ const Modal = ({ children, open, onClose }) => {
 };
 
 Modal.propTypes = {
-    children:PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
     open: PropTypes.bool,
-    onClose: PropTypes.func
+    small: PropTypes.bool,
+    onClose: PropTypes.func,
+    className: PropTypes.string,
 };
 
 export default Modal;
